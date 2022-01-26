@@ -15,6 +15,7 @@ def part1(data):
             exit(1)
     print("Part 1 Answer:", pos*depth)
 
+
 def part2(data):
     pos = 0
     depth = 0
@@ -34,13 +35,15 @@ def part2(data):
             exit(1)
     print("Part 2 Answer:", pos*depth)
 
+
 def main():
     data = []
     with open('input/002-dive.txt') as f:
         data = [x for x in f.readlines()]
-    
+
     part1(data)
     part2(data)
-       
+
+
 if __name__ == '__main__':
     main()

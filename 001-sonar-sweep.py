@@ -7,6 +7,7 @@ def part1(data):
         prev = x
     print('Part 1 Answer:', count)
 
+
 def part2(data):
     count = 0
     prev = sum(data[:3])
@@ -17,6 +18,7 @@ def part2(data):
         prev = s
     print('Part 2 Answer:', count)
 
+
 def main():
     data = []
     with open('input/001-sonar-sweep.txt') as f:
@@ -24,6 +26,7 @@ def main():
 
     part1(data)
     part2(data)
-       
+
+
 if __name__ == '__main__':
     main()

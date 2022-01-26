@@ -1,4 +1,5 @@
-sq_tranpose = lambda m : [[row[i] for row in m] for i in range(len(m[0]))]
+def sq_tranpose(m): return [[row[i] for row in m] for i in range(len(m[0]))]
+
 
 def part1(data):
     sz = max(sum([list(x.values()) for x in data], []))+1
@@ -13,12 +14,13 @@ def part1(data):
                 grid[i][y1] += 1
     # optional: transpose cuz origin has to be at top left
     final_grid = sq_tranpose(grid)
-    count =0
+    count = 0
     for row in range(sz):
         for col in range(sz):
             if final_grid[row][col] >= 2:
                 count += 1
     print('Part 1 Answer:', count)
+
 
 def part2(data):
     sz = max(sum([list(x.values()) for x in data], []))+1
@@ -36,7 +38,7 @@ def part2(data):
             dy = y2-y1
             sx = dx // abs(dx)
             sy = dy // abs(dy)
-            while x1!=x2 and y1!=y2:
+            while x1 != x2 and y1 != y2:
                 grid[x1][y1] += 1
                 x1 += sx
                 y1 += sy
@@ -49,6 +51,7 @@ def part2(data):
             if final_grid[row][col] >= 2:
                 count += 1
     print('Part 2 Answer:', count)
+
 
 def main():
     data = []
@@ -63,9 +66,10 @@ def main():
             segment['y1'] = int(y1)
             segment['x2'] = int(x2)
             segment['y2'] = int(y2)
-            data.append(segment)  
+            data.append(segment)
     part1(data)
     part2(data)
-       
+
+
 if __name__ == '__main__':
     main()
